@@ -126,7 +126,29 @@ figure {
   font-size: 14px;
 }
 
-/*  */
+.ScSub {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 16px;
+  border-radius: 9999px;
+  background: var(--clr-primary);
+  color: var(--clr-white);
+  font: 600 12px/1 var(--font-family-primary);
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  backdrop-filter: blur(4px);
+  margin-bottom: 24px;
+}
+
+.ScLable {
+  margin-bottom: 16px;
+  font: 700 14px/1.2 var(--font-family-primary);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--clr-primary);
+}
+
+/* SiteHeader */
 .SiteHeader {
   position: sticky;
   top: 0;
@@ -163,7 +185,7 @@ figure {
   margin-left: 30px;
 }
 
-/*  */
+/* HeroBanner */
 
 .HeroBanner {
   min-height: 712px;
@@ -191,20 +213,6 @@ figure {
   z-index: 1;
   max-width: 662px;
   margin: 0 auto;
-}
-
-.ScSub {
-  display: inline-flex;
-  align-items: center;
-  padding: 6px 16px;
-  border-radius: 9999px;
-  background: var(--clr-primary);
-  color: var(--clr-white);
-  font: 600 12px/1 var(--font-family-primary);
-  text-transform: uppercase;
-  letter-spacing: .05em;
-  backdrop-filter: blur(4px);
-  margin-bottom: 24px;
 }
 
 .HeroBanner .cn-wrap h1 {
@@ -249,7 +257,7 @@ figure {
   font-size: 12px;
 }
 
-/*  */
+/* SectionFeature */
 .SectionFeature {
   padding: 80px 0;
   background: var(--clr-slate-900);
@@ -304,16 +312,7 @@ figure {
   width: 100%;
 }
 
-/*  */
-.ScLable {
-  margin-bottom: 16px;
-  font: 700 14px/1.2 var(--font-family-primary);
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: var(--clr-primary);
-}
-
-/*  */
+/* SectionMission */
 .SectionMission {
   padding: 80px 0;
   background: var(--clr-slate-50);
@@ -399,7 +398,7 @@ figure {
   color: var(--clr-slate-600);
 }
 
-/*  */
+/* BenefitsSection */
 .BenefitsSection {
   padding: 80px 0;
 }
@@ -431,7 +430,7 @@ figure {
   color: var(--clr-slate-600);
 }
 
-/*  */
+/* RadioSection */
 .RadioSection {
   position: relative;
   padding: 128px 0;
@@ -439,7 +438,7 @@ figure {
   color: var(--clr-white);
 }
 
-/* Background */
+
 .RadioBg {
   position: absolute;
   inset: 0;
@@ -468,7 +467,7 @@ figure {
       rgba(15, 23, 42, 0.4));
 }
 
-/* Content */
+
 .RadioContent {
   position: relative;
   z-index: 2;
@@ -478,7 +477,7 @@ figure {
   text-align: center;
 }
 
-/* Icon */
+
 .RadioIconWrap {
   position: relative;
   display: inline-flex;
@@ -504,7 +503,7 @@ figure {
   box-shadow: 0 0 15px rgba(79, 70, 229, 0.6);
 }
 
-/* Text */
+
 .RadioTitle {
   margin-bottom: 16px;
   font: 800 48px/1.1 var(--font-family-primary);
@@ -529,39 +528,7 @@ figure {
   color: var(--clr-slate-200);
 }
 
-/* Buttons */
-.RadioActions {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
 
-.BtnPrimary {
-  padding: 16px 40px;
-  background: var(--clr-secondary);
-  color: var(--clr-white);
-  font-weight: 700;
-  border-radius: 999px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 10px 30px -10px rgba(79, 70, 229, 0.5);
-}
-
-.BtnPrimary:hover {
-  transform: scale(1.05);
-}
-
-.BtnGhost {
-  padding: 16px 40px;
-  background: rgba(2, 6, 23, 0.4);
-  color: var(--clr-white);
-  font-weight: 700;
-  border-radius: 999px;
-  text-decoration: none;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(12px);
-}
 
 /* Decorative icon */
 .RadioDecor {
@@ -592,17 +559,15 @@ figure {
   }
 }
 
-/*  */
+/* ListenerHero */
 .ListenerHero {
   position: relative;
   background-color: #0f172a;
-  /* slate-900 */
   padding: 96px 0;
   overflow: hidden;
   color: var(--clr-white);
 }
 
-/* Background circle */
 .ListenerBgCircle {
   position: absolute;
   top: 50%;
@@ -617,12 +582,11 @@ figure {
   pointer-events: none;
 }
 
-/* Floating avatars */
 .ListenerAvatars {
   display: none;
 }
 
-/* Content */
+
 .ListenerContent {
   position: relative;
   z-index: 10;
@@ -656,10 +620,9 @@ figure {
   width: 32px;
   height: 32px;
   color: #6366f1;
-  /* indigo-400 */
+
 }
 
-/* Titles */
 .ListenerTitle {
   font: 800 48px/1.1 var(--font-family-primary);
   color: var(--clr-white);
@@ -672,11 +635,11 @@ figure {
   -webkit-text-fill-color: transparent;
 }
 
-/* Subtitle & description */
+
 .ListenerSubtitle {
   font: 500 20px/1.4 var(--font-family-primary);
   color: rgba(148, 163, 184, 1);
-  /* slate-400 */
+
   margin-bottom: 40px;
 }
 
@@ -687,8 +650,6 @@ figure {
   flex-wrap: wrap;
 }
 
-
-/* Footnote */
 .ListenerFootnote {
   margin-top: 32px;
   font: 500 12px/1.4 var(--font-family-primary);
