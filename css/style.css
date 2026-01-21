@@ -430,133 +430,130 @@ figure {
   color: var(--clr-slate-600);
 }
 
+.BenefitsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 96px;
+  position: relative;
+  z-index: 10;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.BenefitCard {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  padding: 32px;
+  background: var(--clr-slate-50);
+  border: 1px solid var(--clr-slate-100);
+  border-radius: 16px;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.BenefitCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.BenefitCard.right .BenefitText {
+  text-align: right;
+}
+
+.BenefitIcon {
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  background: var(--clr-slate-900);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--clr-white);
+  box-shadow: var(--shadow-icon);
+}
+
+.BenefitIcon i {
+  font-size: 24px;
+}
+
+.BenefitText h4 {
+  margin-bottom: 8px;
+  font: 700 20px/1.2 var(--font-family-primary);
+  color: var(--clr-slate-900);
+}
+
+.BenefitText p {
+  margin: 0;
+  font: 400 16px/1.6 var(--font-family-primary);
+  color: #64748b;
+}
+
 /* RadioSection */
 .RadioSection {
   position: relative;
-  padding: 128px 0;
+  padding: 150px 0;
   overflow: hidden;
-  color: var(--clr-white);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-
-.RadioBg {
+.RadioSection::before {
+  content: '';
   position: absolute;
   inset: 0;
   z-index: 0;
+  background: linear-gradient(to bottom, rgba(15, 23, 42, .6), rgba(15, 23, 42, .9), rgba(15, 23, 42, .9));
 }
-
-.RadioBg img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.RadioOverlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(2, 6, 23, 0.8);
-  backdrop-filter: blur(2px);
-}
-
-.RadioGradient {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top,
-      var(--clr-slate-900),
-      transparent,
-      rgba(15, 23, 42, 0.4));
-}
-
 
 .RadioContent {
   position: relative;
-  z-index: 2;
-  max-width: 1120px;
+  z-index: 1;
+  max-width: 800px;
   margin: 0 auto;
-  padding: 0 16px;
   text-align: center;
 }
 
-
-.RadioIconWrap {
-  position: relative;
-  display: inline-flex;
-  margin-bottom: 24px;
-}
-
 .RadioIconWrap svg {
-  width: 64px;
-  height: 64px;
-  stroke: rgba(255, 255, 255, 0.2);
-  fill: none;
+  width: 50px;
+  height: 50px;
+  color: var(--clr-slate-200);
 }
 
-.PulseDot {
-  position: absolute;
-  inset: 0;
-  margin: auto;
-  width: 24px;
-  height: 24px;
-  background: var(--clr-secondary);
-  border-radius: 50%;
-  animation: pulse 2s infinite;
-  box-shadow: 0 0 15px rgba(79, 70, 229, 0.6);
-}
-
-
-.RadioTitle {
-  margin-bottom: 16px;
+.RadioSection h2 {
+  margin-bottom: 12px;
   font: 800 48px/1.1 var(--font-family-primary);
+  letter-spacing: -0.5px;
+  color: var(--clr-white);
 }
 
-.RadioTitle span {
-  background: linear-gradient(to right, #f24a3c, #4f46e5);
+.RadioSection h2 span {
+  background: var(--clr-primary-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
 }
 
-.RadioSubtitle {
+.RadioSection h3 {
   font: 500 22px/1.4 var(--font-family-primary);
   color: var(--clr-slate-200);
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 }
 
-.RadioDesc {
-  max-width: 640px;
-  margin: 0 auto 40px;
-  font: 16px/1.7 var(--font-family-primary);
+.RadioSection p {
+  margin-bottom: 32px;
+  font: 400 18px/1.6 var(--font-family-primary);
   color: var(--clr-slate-200);
 }
 
-
-
-/* Decorative icon */
-.RadioDecor {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  opacity: 0.2;
-  transform: translateY(25%);
-  pointer-events: none;
-}
-
-.RadioDecor svg {
-  width: 384px;
-  height: 384px;
-  fill: var(--clr-white);
-}
-
-/* Animation */
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-
-  100% {
-    transform: scale(2);
-    opacity: 0;
-  }
+.RadioSection .button-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
 }
 
 /* ListenerHero */
@@ -582,10 +579,15 @@ figure {
   pointer-events: none;
 }
 
-.ListenerAvatars {
+.ListenerAvatars img {
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  object-position: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
   display: none;
 }
-
 
 .ListenerContent {
   position: relative;
@@ -619,62 +621,121 @@ figure {
 .ListenerIcon svg {
   width: 32px;
   height: 32px;
-  color: #6366f1;
-
+  color: var(--clr-secondary);
 }
 
-.ListenerTitle {
+.ListenerContent h2 {
   font: 800 48px/1.1 var(--font-family-primary);
   color: var(--clr-white);
   margin-bottom: 24px;
 }
 
-.ListenerTitle span {
-  background: linear-gradient(to right, #f24a3c, #4f46e5);
+.ListenerContent h2 span {
+  background: var(--clr-primary-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-
-.ListenerSubtitle {
+.ListenerContent p {
   font: 500 20px/1.4 var(--font-family-primary);
   color: rgba(148, 163, 184, 1);
-
   margin-bottom: 40px;
 }
 
-.ListenerActions {
+.ListenerContent .button-wrap {
   display: flex;
   justify-content: center;
   gap: 16px;
   flex-wrap: wrap;
 }
 
-.ListenerFootnote {
-  margin-top: 32px;
+.ListenerContent .ListenerFootnote {
+  margin: 32px 0 0;
   font: 500 12px/1.4 var(--font-family-primary);
   text-transform: uppercase;
   letter-spacing: 1px;
   color: rgba(148, 163, 184, 0.7);
 }
 
-/* Floating animations */
-@keyframes floatSlow {
-  0% {
-    transform: translateY(0);
-  }
-
-  100% {
-    transform: translateY(-12px);
-  }
+/* SiteFooter */
+.SiteFooter {
+  padding: 80px 0 30px;
+  background: #0f172a;
 }
 
-@keyframes floatMedium {
-  0% {
-    transform: translateY(0);
-  }
+.FooterBottom {
+  padding-top: 30px;
+  margin-top: 30px;
+  border-top: 1px solid #1e293b99;
+}
 
-  100% {
-    transform: translateY(-8px);
-  }
+.FooterBottom p {
+  text-align: center;
+  font: 400 16px/1.6 var(--font-family-primary);
+  color: var(--clr-slate-200);
+}
+
+.FooterBrand {
+  padding-right: 20px;
+}
+
+.FooterBrand img {
+  max-width: 230px;
+  object-fit: contain;
+  margin-bottom: 20px;
+}
+
+.FooterBrand p {
+  margin-bottom: 20px;
+  font: 400 16px/1.6 var(--font-family-primary);
+  color: var(--clr-slate-200);
+}
+
+.SiteFooter h4 {
+  margin-bottom: 12px;
+  font: 600 18px/1.2 var(--font-family-primary);
+  color: var(--clr-white);
+  text-transform: capitalize;
+}
+
+.FooterLinkGroup ul li {
+  margin-bottom: 10px;
+}
+
+.FooterLinkGroup ul li:last-child {
+  margin: 0;
+}
+
+.FooterLinkGroup ul li a {
+  font: 400 16px/1.6 var(--font-family-primary);
+  color: var(--clr-slate-200);
+}
+
+.FooterLinkGroup ul li a:hover {
+  color: var(--clr-primary);
+}
+
+.SocialIcons {
+  display: flex;
+  gap: 15px;
+}
+
+.SocialIcons .SocialIcon {
+  font-size: 24px;
+  color: var(--clr-slate-200);
+}
+
+.SocialIcon:hover {
+  color: var(--clr-primary);
+}
+
+.SocialWrap a {
+  display: block;
+  margin-bottom: 20px;
+  font: 400 16px/1.6 var(--font-family-primary);
+  color: var(--clr-slate-200);
+}
+
+.SocialWrap a:hover {
+  color: var(--clr-primary);
 }
