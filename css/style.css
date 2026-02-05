@@ -1125,73 +1125,40 @@ figure {
 }
 
 /*  */
-.donate-section {
+.ScDonate {
   padding: 96px 0;
   background: #eff6ff;
 }
 
-.donate-container {
-  max-width: 1280px;
-  padding: 0 16px;
-  margin: 0 auto;
-}
-
-.donate-head {
+.ScDonateHeader {
   text-align: center;
-  margin-bottom: 64px;
+  max-width: 800px;
+  margin: 0 auto 90px;
 }
 
-.donate-badge {
-  display: inline-block;
-  padding: 6px 16px;
-  background: #ef4444;
-  color: #fff;
-  font-size: 12px;
-  font-weight: 700;
-  border-radius: 999px;
-  margin-bottom: 16px;
-  letter-spacing: 1px;
-}
-
-.donate-title {
-  font-size: 48px;
-  font-weight: 800;
-  color: #0f172a;
+.ScDonate h2 {
   margin-bottom: 24px;
+  font: 800 48px/1.1 var(--font-family-primary);
+  letter-spacing: -0.5px;
+  color: var(--clr-slate-900);
 }
 
-.donate-title span {
-  background: linear-gradient(to right, #ef4444, #3b82f6);
+.ScDonate h2 span {
+  background: var(--clr-primary-gradient);
   -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   color: transparent;
 }
 
-.donate-subtitle {
-  max-width: 640px;
-  margin: 0 auto;
-  font-size: 18px;
-  color: #475569;
-  line-height: 1.7;
+.ScDonate p {
+  margin-bottom: 32px;
+  font: 400 18px/1.6 var(--font-family-primary);
+  color: var(--clr-slate-600);
 }
 
-.donate-grid {
-  max-width: 1152px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 32px;
-}
-
-@media(min-width:1024px) {
-  .donate-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-/* LEFT CARD */
-
-.donate-features {
-  background: #fff;
+.ScDonateCards {
+  background: var(--clr-white);
   border-radius: 40px;
   padding: 40px;
   border: 1px solid #f1f5f9;
@@ -1199,53 +1166,57 @@ figure {
   display: flex;
   flex-direction: column;
   gap: 32px;
+  height: 100%;
+  align-items: start;
+  justify-content: center;
 }
 
-.feature-row {
+.ScDonateCard {
   display: flex;
   gap: 24px;
   align-items: flex-start;
 }
 
-.feature-icon {
+.ScDonateCardIcon {
   width: 64px;
   height: 64px;
   border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
+  color: var(--clr-white);
   flex-shrink: 0;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.feature-icon svg {
+.ScDonateCardIcon svg {
   width: 32px;
   height: 32px;
 }
 
-.feature-icon.dark {
+.ScDonateCardIcon.dark {
   background: #0f172a;
 }
 
-.feature-icon.blue {
+.ScDonateCardIcon.blue {
   background: #2563eb;
 }
 
-.feature-row h3 {
-  font-size: 20px;
-  font-weight: 700;
-  color: #0f172a;
-  margin-bottom: 8px;
+.ScDonateCardCn h3 {
+  font: 700 20px/28px var(--font-family-primary);
+  color: var(--clr-slate-900);
+  margin: 0 0 8px;
 }
 
-.feature-row p {
-  color: #475569;
-  line-height: 1.6;
+.ScDonateCardCn p {
+  font: 16px/26px var(--font-family-primary);
+  color: var(--clr-slate-600);
+  margin: 0;
 }
 
-/* RIGHT CARD */
 
+
+/*  */
 .donate-form-card {
   position: relative;
   background: #fff;
