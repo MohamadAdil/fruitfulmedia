@@ -1747,3 +1747,8 @@ figure {
 .SocialWrap a:hover {
   color: var(--clr-primary);
 }
+
+/* InnerHero */
+.InnerHero {
+  min-height: 500px;
+}
