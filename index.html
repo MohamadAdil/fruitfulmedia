@@ -41,7 +41,8 @@
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
-
+  <!-- Swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <!-- Custom CSS -->
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/responsive.css">
@@ -97,18 +98,25 @@
     </nav>
   </header>
   <!-- HeroBanner -->
-  <section class="HeroBanner" style="background-image: url(./images/hero-bg.webp);">
+  <section class="HeroBanner">
     <div class="container">
-      <div class="cn-wrap">
+      <div class="HeroBannerCn">
         <span class="ScSub">Now Broadcasting Live</span>
         <h1>Faith. Worship. Life. <span>Radio for the Soul</span></h1>
-        <p>Uplifting music and encouraging messages streaming 24/7. Let the peace of God fill your day.</p>
+        <p>Uplifting music and encouraging messages streaming 24/7. Let the peace of God fill your day. </p>
         <div class="buttpn-wrap">
           <a href="javascript:void(0)" class="btn-main btn-with-icon"><i class="fa-solid fa-play"></i> Listen Live</a>
         </div>
         <div class="btm-des">
           <p><i class="fa-solid fa-star"></i> 100% Listener Supported</p>
         </div>
+      </div>
+    </div>
+    <div class="swiper SwiperHero">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide" style="background-image:url('./images/hero-bg.webp');"></div>
+        <div class="swiper-slide" style="background-image:url('./images/hero-bg.webp');"></div>
+        <div class="swiper-slide" style="background-image:url('./images/hero-bg.webp');"></div>
       </div>
     </div>
   </section>
@@ -479,7 +487,7 @@
       <div class="ScDonateHeader">
         <span class="ScSub">Fruitful Media</span>
         <h2>
-          Our Promise to 
+          Our Promise to
           <span>Your Spiritual Walk</span>
         </h2>
         <p>
@@ -713,6 +721,7 @@
   <!-- Bootstrap JS Bundle (with Popper) -->
   <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="./js/custom.js"></script>
 </body>
 

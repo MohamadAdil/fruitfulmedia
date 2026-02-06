@@ -186,36 +186,58 @@ figure {
 }
 
 /* HeroBanner */
-
 .HeroBanner {
   min-height: 712px;
   padding: 100px 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  background-position: center;
-  background-size: cover;
-  background-repeat: repeat;
   position: relative;
 }
 
-.HeroBanner::before {
+.SwiperHero {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.SwiperHero .swiper-slide {
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  background-repeat: repeat;
+}
+
+
+.SwiperHero .swiper-slide::before {
   content: '';
   position: absolute;
   inset: 0;
   z-index: 0;
-  background: linear-gradient(to bottom, rgba(15, 23, 42, .6), rgba(15, 23, 42, .4), rgba(15, 23, 42, .9));
+  background-image: inherit;
+  background-size: cover;
+  background-position: center;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
 }
 
-.HeroBanner .cn-wrap {
-  position: relative;
+
+.SwiperHero .swiper-slide::after {
+  content: '';
+  position: absolute;
+  inset: 0;
   z-index: 1;
-  max-width: 662px;
-  margin: 0 auto;
+  background: linear-gradient(to bottom,
+      rgba(15, 23, 42, .6),
+      rgba(15, 23, 42, .4),
+      rgba(15, 23, 42, .9));
+  pointer-events: none;
 }
 
-.HeroBanner .cn-wrap h1 {
+.HeroBanner .HeroBannerCn {
+  position: relative;
+  max-width: 662px;
+  z-index: 1;
+}
+
+.HeroBanner .HeroBannerCn h1 {
   font: 800 72px/1.2 var(--font-family-primary);
   color: var(--clr-white);
   letter-spacing: -.02em;
@@ -223,17 +245,17 @@ figure {
   text-shadow: 0 10px 15px rgba(0, 0, 0, .25);
 }
 
-.HeroBanner .cn-wrap h1 span {
-  background: var(--clr-primary-gradient);
+.HeroBanner .HeroBannerCn h1 span {
+  /* background: var(--clr-primary-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
+  background-clip: text; */
+  color: var(--clr-primary);
 }
 
-.HeroBanner .cn-wrap p {
+.HeroBanner .HeroBannerCn p {
   font: 400 20px/1.6 var(--font-family-primary);
-  color: var(--clr-slate-200);
+  color: var(--clr-slate-100);
   margin: 0 0 40px;
   text-shadow: 0 4px 6px rgba(0, 0, 0, .1);
 }
@@ -245,10 +267,10 @@ figure {
 .HeroBanner .btm-des p {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
   gap: 8px;
   font-size: 14px;
-  color: #94a3b8;
+  color: var(--clr-slate-100);
   text-align: center;
 }
 
@@ -634,7 +656,7 @@ figure {
 .FeatureRowCard {
   position: relative;
   flex: 1;
-  height: 100%;
+  height: auto;
   padding: 32px;
   background: rgba(255, 255, 255, .05);
   border: 1px solid rgba(255, 255, 255, .1);
@@ -686,14 +708,15 @@ figure {
 }
 
 .SectionMission h2 {
-  margin-bottom: 24px;
+  margin-bottom: 14px;
+  margin-top: 5px;
   font: 800 48px/1.1 var(--font-family-primary);
   letter-spacing: -0.5px;
   color: var(--clr-slate-900);
 }
 
 .SectionMission p {
-  margin-bottom: 32px;
+  margin-bottom: 20px;
   font: 400 16px/1.6 var(--font-family-primary);
   color: var(--clr-slate-600);
 }
@@ -1722,4 +1745,249 @@ figure {
 /* InnerHero */
 .InnerHero {
   min-height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+}
+
+.InnerHero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(to bottom, rgba(15, 23, 42, .6), rgba(15, 23, 42, .4), rgba(15, 23, 42, .9));
+}
+
+/*  */
+.ChannelSection {
+  padding: 80px 0;
+}
+
+.ChannelHeader {
+  text-align: center;
+  max-width: 768px;
+  margin: 0 auto 50px;
+}
+
+.ChannelSection h2 {
+  margin-bottom: 12px;
+  font: 800 48px/1.1 var(--font-family-primary);
+  letter-spacing: -0.5px;
+  color: var(--clr-slate-900);
+}
+
+.ChannelSection h2 span {
+  background: var(--clr-primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.ChannelSection p {
+  margin-bottom: 0;
+  font: 400 16px/1.6 var(--font-family-primary);
+  color: var(--clr-slate-600);
+}
+
+.ChannelGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  position: relative;
+  z-index: 10;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+/*  */
+.ChannelCard {
+  padding: 24px;
+  background: var(--clr-slate-50);
+  border: 1px solid var(--clr-slate-100);
+  border-radius: 16px;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.ChannelCardHead {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  /* margin-bottom: 20px; */
+}
+
+.ChannelCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.ChannelIcon {
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  background: var(--clr-slate-900);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--clr-white);
+  box-shadow: var(--shadow-icon);
+}
+
+.ChannelIcon i {
+  font-size: 24px;
+}
+
+.ChannelText h3 {
+  margin-bottom: 0px;
+  font: 700 20px/1.2 var(--font-family-primary);
+  color: var(--clr-slate-900);
+}
+
+.ChannelText p {
+  margin: 0 0;
+  font: 400 12px/1.6 var(--font-family-primary);
+  color: #64748b;
+}
+
+.ChannelInfo {
+  flex: 1;
+}
+
+.ChannelInfo p {
+  margin: 0 0 12px;
+  font: 400 16px/1.6 var(--font-family-primary);
+  color: #64748b;
+}
+
+.ChannelInfo a {
+  width: 100%;
+}
+
+/*  */
+.SectionFmRadio {
+  padding: 80px 0;
+}
+
+/* .FmRadioWrap{
+  display: flex;
+  align-items: center;
+}
+.FmRadioContent{
+flex: 1;
+} */
+.FmRadioIcon {}
+
+.FmRadioWrap {
+  padding: 40px 100px;
+  border-radius: 40px;
+  box-shadow: 0 0 24px #0000002f;
+}
+
+.FmRadioContent h2 {
+  margin-bottom: 14px;
+  margin-top: 5px;
+  font: 800 48px/1.1 var(--font-family-primary);
+  letter-spacing: -0.5px;
+  color: var(--clr-slate-900);
+  text-align: center;
+}
+
+.FmRadioContent p {
+  margin-bottom: 20px;
+  font: 400 16px/1.6 var(--font-family-primary);
+  color: var(--clr-slate-600);
+  text-align: center;
+}
+
+.FmRadioContent span {
+  margin-bottom: 20px;
+  font: 400 16px/1.6 var(--font-family-primary);
+  color: var(--clr-slate-600);
+  text-align: center;
+  display: block;
+}
+
+.FmRadioIcon {
+  font-size: 50px;
+  text-align: center;
+}
+
+/*  */
+.updates-section {
+  padding: 80px 0;
+  background: #f4f2fb;
+}
+
+.updates-grid {
+  display: grid;
+  grid-template-columns: 2.5fr 1fr;
+  gap: 30px;
+}
+
+.update-card {
+  display: flex;
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.update-img img {
+  width: 260px;
+  height: 100%;
+  object-fit: cover;
+}
+
+.update-content {
+  padding: 25px;
+}
+
+.update-content h3 {
+  margin: 0 0 5px;
+  font-size: 22px;
+}
+
+.update-content .date {
+  font-size: 14px;
+  color: #8b86a3;
+}
+
+.update-content p {
+  margin: 15px 0;
+  color: #555;
+}
+.updates-sidebar {
+  background: #fff;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.updates-sidebar h4 {
+  margin-bottom: 20px;
+}
+
+.updates-sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.updates-sidebar li {
+  margin-bottom: 15px;
+}
+
+.updates-sidebar span {
+  display: block;
+  font-size: 13px;
+  color: #8b86a3;
 }
